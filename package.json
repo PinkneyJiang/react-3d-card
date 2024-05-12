@@ -1,0 +1,63 @@
+{
+  "name": "@pinkney/react-3d-card",
+  "version": "1.0.0",
+  "description": "Ultra-smooth, 60 FPS hardware-accelerated 3D tilt perspective & dynamic spotlight glare card component and hook for React.",
+  "author": "Pinkney Jiang <pinkney.jiang@gmail.com>",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pinkney/profile-pinkney.git",
+    "directory": "packages/react-3d-card"
+  },
+  "keywords": [
+    "react",
+    "3d-card",
+    "tilt",
+    "spotlight-glare",
+    "micro-interaction",
+    "animation",
+    "physics",
+    "cyberpunk",
+    "hardware-acceleration"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    },
+    "./styles.css": "./dist/styles.css"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup && node -e \"require('fs').copyFileSync('src/styles.css', 'dist/styles.css')\"",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "tsup": "^8.3.6",
+    "typescript": "^5.7.3"
+  }
+}
