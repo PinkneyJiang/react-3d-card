@@ -1,0 +1,29 @@
+.card-3d-wrapper {
+  position: relative;
+  transform-style: preserve-3d;
+  will-change: transform;
+  overflow: hidden;
+  border-radius: inherit;
+}
+
+.card-3d-glare {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  background: radial-gradient(
+    circle 320px at var(--mouse-x, -500px) var(--mouse-y, -500px),
+    var(--glare-color, rgba(255, 255, 255, 0.12)),
+    transparent 80%
+  );
+  z-index: 10;
+}
+
+.card-3d-wrapper:hover .card-3d-glare {
+  opacity: 1;
+}
